@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://lrodhy7b1jvb"]
+
+[ext_resource type="Script" path="res://label.gd" id="1_4wa2n"]
+[ext_resource type="Texture2D" uid="uid://fkeqgmv1i7t6" path="res://spritemusic.png" id="1_whfss"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="2_51dvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46lxp"]
+
+[node name="Label" type="Label"]
+offset_left = 28.0
+offset_top = 80.0
+offset_right = 109.0
+offset_bottom = 103.0
+text = "Paul Rowe
+"
+script = ExtResource("1_4wa2n")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(307, 195)
+scale = Vector2(0.230833, 0.2475)
+texture = ExtResource("1_whfss")
+script = ExtResource("2_51dvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_46lxp")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = -54.0
+offset_right = 409.0
+offset_bottom = -1.0
+text = "hi"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
